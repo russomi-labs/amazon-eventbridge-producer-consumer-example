@@ -6,7 +6,7 @@ The example shows how an ATM application at a bank could generate events, and th
 
 Important: this application uses various AWS services and there are costs associated with these services after the Free Tier usage - please see the [AWS Pricing page](https://aws.amazon.com/pricing/) for details. You are responsible for any AWS costs incurred. No warranty is implied in this example.
 
-For more blogs and examples, visit [Serverless Land](https://serverlessland.com/). 
+For more blogs and examples, visit [Serverless Land](https://serverlessland.com/).
 
 ```bash
 .
@@ -38,6 +38,12 @@ For more blogs and examples, visit [Serverless Land](https://serverlessland.com/
 ```
 cd ./amazon-eventbridge-producer-consumer-example
 sam deploy --guided
+
+# Example of invoking lambda locally
+aws lambda invoke --function-name eventbridge-app-atmProducerFn-xdazsEiS1rKs response.json
+
+# or via sam cli
+sam local invoke atmProducerFn
 ```
 Choose a stack name, select the desired AWS Region, and allow SAM to create roles with the required permissions. Once you have run guided mode once, you can use `sam deploy` in future to use these defaults.
 
